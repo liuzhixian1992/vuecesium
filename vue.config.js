@@ -3,8 +3,7 @@ const webpack = require('webpack')
 const path = require('path')
 
 let cesiumSource = './node_modules/cesium/Source'
-let cesiumWorkers = '../Build/Cesium/Workers'
-
+let cesiumWorkers = '../Build/Cesium'
 module.exports = {
   // 基本路径  3.6之前的版本时 baseUrl
   publicPath: "./",
@@ -52,10 +51,10 @@ module.exports = {
       }
     },
     plugins: [
-      new CopyWebpackPlugin([{ from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' }]),
-      new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'Assets' }]),
-      new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }]),
-      new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty/Workers'), to: 'ThirdParty/Workers' }]),
+      new CopyWebpackPlugin([{ from: "node_modules/cesium/Build/Cesium/Workers", to: 'Workers' }]),
+      new CopyWebpackPlugin([{ from: "node_modules/cesium/Build/Cesium/Assets", to: 'Assets' }]),
+      new CopyWebpackPlugin([{ from: "node_modules/cesium/Build/Cesium/Widgets", to: 'Widgets' }]),
+      new CopyWebpackPlugin([{ from: "node_modules/cesium/Build/Cesium/ThirdParty", to: 'ThirdParty' }]),
       new webpack.DefinePlugin({
         CESIUM_BASE_URL: JSON.stringify('./')
       })

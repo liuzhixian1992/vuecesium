@@ -35,8 +35,11 @@ export default {
   /*.router-link-active {*/
     /*color: #f00;*/
   /*}*/
- 
-  .active {
-    color: #f00;
-  }
-</style>
+ #app{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ }
+  </style>
